@@ -20,7 +20,7 @@ pipelines:
         readOnly:
           my_env_var: "hello" 
     steps:
-      - name: build
+      - name: step_1
         public: true
         serial: true
         configuration:
