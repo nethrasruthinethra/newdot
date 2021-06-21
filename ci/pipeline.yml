@@ -21,7 +21,7 @@ pipelines:
       - name: build-service
         public: true
         serial: true
-  plan:
+    plan:
       - get: service-repo
         trigger: true
       - task: build-and-pkg
