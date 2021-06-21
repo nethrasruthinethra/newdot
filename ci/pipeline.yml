@@ -21,8 +21,6 @@ pipelines:
           my_env_var: "hello" 
     steps:
       - name: step_1
-        public: true
-        serial: true
         configuration:
           inputResources:
             - name: mydotnetRepo
