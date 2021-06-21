@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: my_github
-      path: nethrasruthinethra # replace jfrog with your username or org name
+      path: nethrasruthinethra/newdot # replace jfrog with your username or org name
       branches:
         include: master
         
