@@ -13,7 +13,7 @@ resources:
       sourceArtifactory: hello
       buildName: Testapp
  
- pipelines: 
+pipelines: 
   - name: my_dotnetpipeline
     configuration:
       environmentVariables:
