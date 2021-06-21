@@ -13,7 +13,7 @@ resources:
       sourceArtifactory: sample
       buildName: Testapp
   
-  pipelines: 
+pipelines: 
   - name: dotnet-core-hello-world
     configuration:
        
