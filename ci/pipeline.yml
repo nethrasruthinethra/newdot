@@ -34,8 +34,8 @@ pipelines:
                trigger: true
              - task: build-and-pkg
                file: service-repo/ci/tasks/build.yml
-              - put: deploy-dev-env
-            params:
+             - put: deploy-dev-env
+           params:
                 manifest: service-repo/manifest.yml
 
       
