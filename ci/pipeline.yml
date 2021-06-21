@@ -12,21 +12,31 @@ resources:
     configuration:
       sourceArtifactory: hello
       buildName: Testapp
-  
-pipelines: 
-  - name: dotnet-core-hello-world
-       
+ 
+ pipelines: 
+  - name: my_dotnetpipeline
+    configuration:
+      environmentVariables:
+        readOnly:
+          my_env_var: "hello" 
     steps:
       - name: build-service
         public: true
         serial: true
-      - get: service-repo
-        trigger: true
-      - task: build-and-pkg
-        file: service-repo/ci/tasks/build.yml
-      - put: deploy-dev-env
-        params:
-        manifest: service-repo/manifest.yml
+        configuration:
+          inputResources:
+            - name: mydotnetRepo
+          outputResources:
+            - name: mydotnetInfo            
+        execution:
+          onExecute:
+             - get: service-repo
+               trigger: true
+             - task: build-and-pkg
+               file: service-repo/ci/tasks/build.yml
+              - put: deploy-dev-env
+            params:
+                manifest: service-repo/manifest.yml
 
       
       
