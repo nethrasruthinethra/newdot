@@ -15,13 +15,11 @@ resources:
   
 pipelines: 
   - name: dotnet-core-hello-world
-    configuration:
        
     steps:
       - name: build-service
         public: true
         serial: true
-    plan:
       - get: service-repo
         trigger: true
       - task: build-and-pkg
